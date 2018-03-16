@@ -1,6 +1,5 @@
-﻿import { GET_POSTS_SUCCESS, GET_POSTS_ERROR } from './blogConstans.jsx';
+﻿import { GET_POSTS_SUCCESS, GET_POSTS_ERROR } from './blogConstants.jsx';
 import "isomorphic-fetch";
-import { constants } from 'zlib';
 
 export function receivePosts(data) {
     return {
@@ -28,7 +27,7 @@ export function getPosts(pageIndex = 0, tag) {
             }).then((data) => {
                 dispatch(receivePosts(data))
             }).catch((ex) => {
-                dispatch(errorReceive(err))
+                dispatch(errorReceive(ex))
             });
     }
 }
